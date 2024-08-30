@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["AA"],
+    "key":
+    {
+        "A":
+        {
+            "item": "minecraft:planks",
+            "data": 4
+        }
+    },
+    "result":
+    {
+        "item": "fb:acacia_pressure_plate",
+        "count": 4
+    }
+}

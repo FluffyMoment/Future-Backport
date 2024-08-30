@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["A"],
+    "key":
+    {
+        "A":
+        {
+            "item": "minecraft:planks",
+            "data": 0
+        }
+    },
+    "result":
+    {
+        "item": "minecraft:wooden_button",
+        "count": 4
+    }
+}

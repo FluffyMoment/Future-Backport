@@ -1,0 +1,6 @@
+{
+	"parent": "block/trapdoor_open",
+	"textures": {
+		"texture": "fb:blocks/spruce_trapdoor"
+	}
+}

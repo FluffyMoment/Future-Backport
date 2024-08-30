@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["AA"],
+    "key":
+    {
+        "A":
+        {
+            "item": "minecraft:planks",
+            "data": 3
+        }
+    },
+    "result":
+    {
+        "item": "fb:jungle_pressure_plate",
+        "count": 4
+    }
+}

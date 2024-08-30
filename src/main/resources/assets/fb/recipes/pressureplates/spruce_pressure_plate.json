@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["A"],
+    "key":
+    {
+        "A":
+        {
+            "item": "minecraft:planks",
+            "data": 1
+        }
+    },
+    "result":
+    {
+        "item": "fb:spruce_button",
+        "count": 2
+    }
+}

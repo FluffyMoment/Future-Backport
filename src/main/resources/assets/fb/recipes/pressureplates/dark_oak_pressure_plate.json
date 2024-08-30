@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["A"],
+    "key":
+    {
+        "A":
+        {
+            "item": "minecraft:planks",
+            "data": 5
+        }
+    },
+    "result":
+    {
+        "item": "fb:dark_oak_button",
+        "count": 2
+    }
+}

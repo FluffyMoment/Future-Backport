@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["AA"],
+    "key":
+    {
+        "A":
+        {
+            "item": "minecraft:planks",
+            "data": 2
+        }
+    },
+    "result":
+    {
+        "item": "fb:birch_pressure_plate",
+        "count": 4
+    }
+}

@@ -1,0 +1,20 @@
+
+//Items
+item.test_item.name=Test Item
+
+//Blocks
+tile.blue_ice.name=Blue Ice
+tile.smoker_off.name=Smoker
+tile.smoker_on.name=Lit Smoker
+
+//Tools
+
+//Armor
+
+//Food
+
+//Tabs
+itemGroup.futurebackporttab.name= Future Backport
+
+//Containers
+container.smoker=Smoker

@@ -1,0 +1,8 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "top": "fb:blocks/smoker_top",
+        "front": "fb:blocks/smoker_front_on",
+        "side": "fb:blocks/smoker_side"
+    }
+}
