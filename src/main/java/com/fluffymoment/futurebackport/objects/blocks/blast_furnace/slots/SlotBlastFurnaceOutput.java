@@ -1,6 +1,6 @@
-package com.fluffymoment.futurebackport.objects.blocks.smoker.slots;
+package com.fluffymoment.futurebackport.objects.blocks.blast_furnace.slots;
 
-import com.fluffymoment.futurebackport.objects.blocks.smoker.SmokerRecipes;
+import com.fluffymoment.futurebackport.objects.blocks.blast_furnace.BlastFurnaceRecipes;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -8,12 +8,12 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 
-public class SlotSmokerOutput extends Slot
+public class SlotBlastFurnaceOutput extends Slot
 {
     private final EntityPlayer player;
     private int removeCount;
 
-    public SlotSmokerOutput(EntityPlayer player, IInventory inventoryIn, int slotIndex, int xPosition, int yPosition)
+    public SlotBlastFurnaceOutput(EntityPlayer player, IInventory inventoryIn, int slotIndex, int xPosition, int yPosition)
     {
         super(inventoryIn, slotIndex, xPosition, yPosition);
         this.player = player;
@@ -57,7 +57,7 @@ public class SlotSmokerOutput extends Slot
         if (!this.player.world.isRemote)
         {
             int i = this.removeCount;
-            float f = SmokerRecipes.instance().getCookingExperience(stack);
+            float f = BlastFurnaceRecipes.instance().getCookingExperience(stack);
 
             if (f == 0.0F)
             {

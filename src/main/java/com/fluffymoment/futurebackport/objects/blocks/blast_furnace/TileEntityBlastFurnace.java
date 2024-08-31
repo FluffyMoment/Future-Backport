@@ -1,6 +1,6 @@
-package com.fluffymoment.futurebackport.objects.blocks.smoker;
+package com.fluffymoment.futurebackport.objects.blocks.blast_furnace;
 
-import com.fluffymoment.futurebackport.objects.blocks.smoker.slots.SlotSmokerFuel;
+import com.fluffymoment.futurebackport.objects.blocks.blast_furnace.slots.SlotBlastFurnaceFuel;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -24,7 +24,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class TileEntitySmoker extends TileEntityLockable implements ITickable, ISidedInventory
+public class TileEntityBlastFurnace extends TileEntityLockable implements ITickable, ISidedInventory
 {
     private static final int[] SLOTS_TOP = new int[] {0};
     private static final int[] SLOTS_BOTTOM = new int[] {2, 1};
@@ -95,7 +95,7 @@ public class TileEntitySmoker extends TileEntityLockable implements ITickable, I
     @Override
     public String getName()
     {
-        return this.hasCustomName() ? this.furnaceCustomName : "container.smoker";
+        return this.hasCustomName() ? this.furnaceCustomName : "container.blast_furnace";
     }
 
     @Override
@@ -111,7 +111,7 @@ public class TileEntitySmoker extends TileEntityLockable implements ITickable, I
 
     public static void registerFixesFurnace(DataFixer fixer)
     {
-        fixer.registerWalker(FixTypes.BLOCK_ENTITY, new ItemStackDataLists(TileEntitySmoker.class, new String[] {"Items"}));
+        fixer.registerWalker(FixTypes.BLOCK_ENTITY, new ItemStackDataLists(TileEntityBlastFurnace.class, new String[] {"Items"}));
     }
 
     public void readFromNBT(NBTTagCompound compound)
@@ -227,7 +227,7 @@ public class TileEntitySmoker extends TileEntityLockable implements ITickable, I
             if (flag != this.isBurning())
             {
                 flag1 = true;
-                Smoker.setState(this.isBurning(), this.world, this.pos);
+                BlastFurnace.setState(this.isBurning(), this.world, this.pos);
             }
         }
 
@@ -250,7 +250,7 @@ public class TileEntitySmoker extends TileEntityLockable implements ITickable, I
         }
         else
         {
-            ItemStack itemstack = SmokerRecipes.instance().getCookingResult(this.furnaceItemStacks.get(0));
+            ItemStack itemstack = BlastFurnaceRecipes.instance().getCookingResult(this.furnaceItemStacks.get(0));
 
             if (itemstack.isEmpty())
             {
@@ -285,7 +285,7 @@ public class TileEntitySmoker extends TileEntityLockable implements ITickable, I
         if (this.canSmelt())
         {
             ItemStack itemstack = this.furnaceItemStacks.get(0);
-            ItemStack itemstack1 = SmokerRecipes.instance().getCookingResult(itemstack);
+            ItemStack itemstack1 = BlastFurnaceRecipes.instance().getCookingResult(itemstack);
             ItemStack itemstack2 = this.furnaceItemStacks.get(2);
 
             if (itemstack2.isEmpty())
@@ -441,7 +441,7 @@ public class TileEntitySmoker extends TileEntityLockable implements ITickable, I
         else
         {
             ItemStack itemStack = this.furnaceItemStacks.get(1);
-            return isItemFuel(stack) || SlotSmokerFuel.isBucket(stack) && itemStack.getItem() != Items.BUCKET;
+            return isItemFuel(stack) || SlotBlastFurnaceFuel.isBucket(stack) && itemStack.getItem() != Items.BUCKET;
         }
     }
 
@@ -480,13 +480,13 @@ public class TileEntitySmoker extends TileEntityLockable implements ITickable, I
     @Override
     public String getGuiID()
     {
-        return "fb:smoker";
+        return "fb:blast_furnace";
     }
 
     @Override
     public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn)
     {
-        return new ContainerSmoker(playerInventory, this);
+        return new ContainerBlastFurnace(playerInventory, this);
     }
 
     public int getField(int id)
@@ -539,13 +539,13 @@ public class TileEntitySmoker extends TileEntityLockable implements ITickable, I
         this.furnaceItemStacks.clear();
     }
 
-    net.minecraftforge.items.IItemHandler handlerTop = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, net.minecraft.util.EnumFacing.UP);
-    net.minecraftforge.items.IItemHandler handlerBottom = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, net.minecraft.util.EnumFacing.DOWN);
-    net.minecraftforge.items.IItemHandler handlerSide = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, net.minecraft.util.EnumFacing.WEST);
+    net.minecraftforge.items.IItemHandler handlerTop = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.UP);
+    net.minecraftforge.items.IItemHandler handlerBottom = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.DOWN);
+    net.minecraftforge.items.IItemHandler handlerSide = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.WEST);
 
     @Override
     @javax.annotation.Nullable
-    public <T> T getCapability(net.minecraftforge.common.capabilities.Capability<T> capability, @javax.annotation.Nullable net.minecraft.util.EnumFacing facing)
+    public <T> T getCapability(net.minecraftforge.common.capabilities.Capability<T> capability, @javax.annotation.Nullable EnumFacing facing)
     {
         if (facing != null && capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
             if (facing == EnumFacing.DOWN)

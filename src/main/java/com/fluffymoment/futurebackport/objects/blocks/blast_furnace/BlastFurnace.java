@@ -1,4 +1,4 @@
-package com.fluffymoment.futurebackport.objects.blocks.smoker;
+package com.fluffymoment.futurebackport.objects.blocks.blast_furnace;
 
 import com.fluffymoment.futurebackport.Main;
 import com.fluffymoment.futurebackport.init.BlockInit;
@@ -25,15 +25,13 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import javax.annotation.Nullable;
-
-public class Smoker extends BlockContainer implements IHasModel
+public class BlastFurnace extends BlockContainer implements IHasModel
 {
     public static final PropertyDirection FACING = BlockHorizontal.FACING;
     private final boolean isBurning;
     private static boolean keepInventory;
 
-    public Smoker(String name, boolean isBurning)
+    public BlastFurnace(String name, boolean isBurning)
     {
         super(Material.ROCK);
         setUnlocalizedName(name);
@@ -61,7 +59,7 @@ public class Smoker extends BlockContainer implements IHasModel
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
-        playerIn.openGui(Main.instance, ConfigHandler.GUI_SMOKER, worldIn, pos.getX(), pos.getY(), pos.getZ());
+        playerIn.openGui(Main.instance, ConfigHandler.GUI_BLAST_FURNACE, worldIn, pos.getX(), pos.getY(), pos.getZ());
         return true;
     }
 
@@ -110,13 +108,13 @@ public class Smoker extends BlockContainer implements IHasModel
 
         if (active)
         {
-            worldIn.setBlockState(pos, BlockInit.SMOKER_ON.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
-            worldIn.setBlockState(pos, BlockInit.SMOKER_ON.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, BlockInit.BLAST_FURNACE_ON.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, BlockInit.BLAST_FURNACE_ON.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
         }
         else
         {
-            worldIn.setBlockState(pos, BlockInit.SMOKER_OFF.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
-            worldIn.setBlockState(pos, BlockInit.SMOKER_OFF.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, BlockInit.BLAST_FURNACE_OFF.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, BlockInit.BLAST_FURNACE_OFF.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
         }
 
         keepInventory = false;
@@ -131,7 +129,7 @@ public class Smoker extends BlockContainer implements IHasModel
     @Override
     public TileEntity createNewTileEntity(World worldIn, int meta)
     {
-        return new TileEntitySmoker();
+        return new TileEntityBlastFurnace();
     }
 
     @Override
@@ -147,9 +145,9 @@ public class Smoker extends BlockContainer implements IHasModel
         if(stack.hasDisplayName())
         {
             TileEntity tileentity = worldIn.getTileEntity(pos);
-            if(tileentity instanceof TileEntitySmoker)
+            if(tileentity instanceof TileEntityBlastFurnace)
             {
-                ((TileEntitySmoker)tileentity).setCustomInventoryName(stack.getDisplayName());
+                ((TileEntityBlastFurnace)tileentity).setCustomInventoryName(stack.getDisplayName());
             }
         }
     }
@@ -159,7 +157,7 @@ public class Smoker extends BlockContainer implements IHasModel
     {
         if(!keepInventory)
         {
-            TileEntitySmoker tileentity = (TileEntitySmoker)worldIn.getTileEntity(pos);
+            TileEntityBlastFurnace tileentity = (TileEntityBlastFurnace)worldIn.getTileEntity(pos);
             InventoryHelper.dropInventoryItems(worldIn, pos, tileentity);
             worldIn.updateComparatorOutputLevel(pos, this);
             super.breakBlock(worldIn, pos, state);
@@ -181,7 +179,7 @@ public class Smoker extends BlockContainer implements IHasModel
     @Override
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
-        return new ItemStack(BlockInit.SMOKER_OFF);
+        return new ItemStack(BlockInit.BLAST_FURNACE_OFF);
     }
 
     @Override

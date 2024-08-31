@@ -1,5 +1,6 @@
 package com.fluffymoment.futurebackport.util.handlers;
 
+import com.fluffymoment.futurebackport.objects.blocks.blast_furnace.TileEntityBlastFurnace;
 import com.fluffymoment.futurebackport.objects.blocks.smoker.TileEntitySmoker;
 import com.fluffymoment.futurebackport.util.Reference;
 import net.minecraft.util.ResourceLocation;
@@ -10,5 +11,6 @@ public class TileEntityHandler
     public static void registerTileEntities()
     {
         GameRegistry.registerTileEntity(TileEntitySmoker.class, new ResourceLocation(Reference.MOD_ID + ":smoker"));
+        GameRegistry.registerTileEntity(TileEntityBlastFurnace.class, new ResourceLocation(Reference.MOD_ID + ":blast_furnace"));
     }
 }

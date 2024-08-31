@@ -1,5 +1,8 @@
 package com.fluffymoment.futurebackport.util.handlers;
 
+import com.fluffymoment.futurebackport.objects.blocks.blast_furnace.ContainerBlastFurnace;
+import com.fluffymoment.futurebackport.objects.blocks.blast_furnace.GuiBlastFurnace;
+import com.fluffymoment.futurebackport.objects.blocks.blast_furnace.TileEntityBlastFurnace;
 import com.fluffymoment.futurebackport.objects.blocks.smoker.ContainerSmoker;
 import com.fluffymoment.futurebackport.objects.blocks.smoker.GuiSmoker;
 import com.fluffymoment.futurebackport.objects.blocks.smoker.TileEntitySmoker;
@@ -20,6 +23,10 @@ public class GuiHandler implements IGuiHandler
         {
             return new ContainerSmoker(player.inventory, (TileEntitySmoker)world.getTileEntity(new BlockPos(x, y, z)));
         }
+        if(ID == ConfigHandler.GUI_BLAST_FURNACE)
+        {
+            return new ContainerBlastFurnace(player.inventory, (TileEntityBlastFurnace)world.getTileEntity(new BlockPos(x, y, z)));
+        }
 
         return null;
     }
@@ -31,6 +38,11 @@ public class GuiHandler implements IGuiHandler
         if(ID == ConfigHandler.GUI_SMOKER)
         {
             return new GuiSmoker(player.inventory, (TileEntitySmoker)world.getTileEntity(new BlockPos(x, y, z)));
+        }
+
+        if(ID == ConfigHandler.GUI_BLAST_FURNACE)
+        {
+            return new GuiBlastFurnace(player.inventory, (TileEntityBlastFurnace)world.getTileEntity(new BlockPos(x, y, z)));
         }
 
         return null;

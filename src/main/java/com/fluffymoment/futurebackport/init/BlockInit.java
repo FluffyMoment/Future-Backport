@@ -17,4 +17,6 @@ public class BlockInit
     public static final Block BLUE_ICE = new BlockBlueIce("blue_ice", Material.PACKED_ICE);
     public static final Block SMOKER_OFF = new Smoker("smoker_off",  false).setCreativeTab(Main.FUTUREBACKPORTTAB);
     public static final Block SMOKER_ON = new Smoker("smoker_on", true);
+    public static final Block BLAST_FURNACE_OFF = new Smoker("blast_furnace_off",  false).setCreativeTab(Main.FUTUREBACKPORTTAB);
+    public static final Block BLAST_FURNACE_ON = new Smoker("blast_furnace_on", true);
 }

@@ -1,0 +1,8 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "top": "fb:blocks/blast_furnace/blast_furnace_top",
+        "front": "fb:blocks/blast_furnace/blast_furnace_front_off",
+        "side": "fb:blocks/blast_furnace/blast_furnace_side"
+    }
+}

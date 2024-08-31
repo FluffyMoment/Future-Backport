@@ -1,35 +1,34 @@
-package com.fluffymoment.futurebackport.objects.blocks.smoker;
+package com.fluffymoment.futurebackport.objects.blocks.blast_furnace;
 
 import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-
 import java.util.Map;
 
-public class SmokerRecipes
+public class BlastFurnaceRecipes
 {
-    private static final SmokerRecipes COOKING_BASE = new SmokerRecipes();
+    private static final BlastFurnaceRecipes COOKING_BASE = new BlastFurnaceRecipes();
     private final Map<ItemStack, ItemStack> cookingList = Maps.<ItemStack, ItemStack>newHashMap();
     private final Map<ItemStack, Float> experienceList = Maps.<ItemStack, Float>newHashMap();
 
-    public static SmokerRecipes instance()
+    public static BlastFurnaceRecipes instance()
     {
         return COOKING_BASE;
     }
 
-    private SmokerRecipes()
+    private BlastFurnaceRecipes()
     {
         //this.addCookingRecipeForBlock(BlockInit.BLUE_ICE, new ItemStack(ItemInit.TEST_ITEM), 0.25f);
-        this.addCookingRecipeForItem(Items.FISH, new ItemStack(Items.COOKED_FISH), 0.25f);
-        this.addCookingRecipeForItem(Items.RABBIT, new ItemStack(Items.COOKED_RABBIT), 0.25f);
-        this.addCookingRecipeForItem(Items.BEEF, new ItemStack(Items.COOKED_BEEF), 0.25f);
-        this.addCookingRecipeForItem(Items.CHICKEN, new ItemStack(Items.COOKED_CHICKEN), 0.25f);
-        this.addCookingRecipeForItem(Items.PORKCHOP, new ItemStack(Items.COOKED_PORKCHOP), 0.25f);
-        this.addCookingRecipeForItem(Items.MUTTON, new ItemStack(Items.COOKED_MUTTON), 0.25f);
-        this.addCookingRecipeForItem(Items.POTATO, new ItemStack(Items.BAKED_POTATO), 0.25f);
+        this.addCookingRecipeForBlock(Blocks.COAL_ORE, new ItemStack(Items.COAL), 0.7f);
+        this.addCookingRecipeForBlock(Blocks.IRON_ORE, new ItemStack(Items.IRON_INGOT), 0.7f);
+        this.addCookingRecipeForBlock(Blocks.REDSTONE_ORE, new ItemStack(Items.REDSTONE), 0.7f);
+        this.addCookingRecipeForBlock(Blocks.GOLD_ORE, new ItemStack(Items.GOLD_INGOT), 0.9f);
+        this.addCookingRecipeForBlock(Blocks.DIAMOND_ORE, new ItemStack(Items.DIAMOND), 1.0f);
+        this.addCookingRecipeForBlock(Blocks.EMERALD_ORE, new ItemStack(Items.EMERALD), 1.0f);
     }
 
     private void addCookingRecipeForItem(Item input, ItemStack stack, float experience)

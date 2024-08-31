@@ -6,6 +6,8 @@ item.test_item.name=Test Item
 tile.blue_ice.name=Blue Ice
 tile.smoker_off.name=Smoker
 tile.smoker_on.name=Lit Smoker
+tile.blast_furnace_off.name=Blast Furnace
+tile.blast_furnace_on.name=Lit Blast Furnace
 
 //Tools
 
@@ -18,3 +20,4 @@ itemGroup.futurebackporttab.name= Future Backport
 
 //Containers
 container.smoker=Smoker
+container.blast_furnace=Blast Furnace
