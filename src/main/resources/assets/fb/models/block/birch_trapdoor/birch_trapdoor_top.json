@@ -1,0 +1,6 @@
+{
+	"parent": "block/trapdoor_top",
+	"textures": {
+		"texture": "fb:blocks/birch_trapdoor"
+	}
+}

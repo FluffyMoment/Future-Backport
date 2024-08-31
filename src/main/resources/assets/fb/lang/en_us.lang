@@ -8,6 +8,21 @@ tile.smoker_off.name=Smoker
 tile.smoker_on.name=Lit Smoker
 tile.blast_furnace_off.name=Blast Furnace
 tile.blast_furnace_on.name=Lit Blast Furnace
+tile.spruce_button.name=Spruce Button
+tile.spruce_pressure_plate.name=Spruce Pressure Plate
+tile.birch_button.name=Birch Button
+tile.birch_pressure_plate.name=Birch Pressure Plate
+tile.acacia_button.name=Acacia Button
+tile.acacia_pressure_plate.name=Acacia Pressure Plate
+tile.dark_oak_button.name=Dark Oak Button
+tile.dark_oak_pressure_plate.name=Dark Oak Pressure Plate
+tile.jungle_button.name=Jungle Button
+tile.jungle_pressure_plate.name=Jungle Pressure Plate
+tile.spruce_trapdoor.name=Spruce Trapdoor
+tile.birch_trapdoor.name=Birch Trapdoor
+tile.dark_oak_trapdoor.name=Dark Oak Trapdoor
+tile.acacia_trapdoor.name=Acacia Trapdoor
+tile.jungle_trapdoor.name=Jungle Trapdoor
 
 //Tools
 
