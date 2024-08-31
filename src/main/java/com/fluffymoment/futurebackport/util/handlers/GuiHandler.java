@@ -6,7 +6,6 @@ import com.fluffymoment.futurebackport.objects.blocks.blast_furnace.TileEntityBl
 import com.fluffymoment.futurebackport.objects.blocks.smoker.ContainerSmoker;
 import com.fluffymoment.futurebackport.objects.blocks.smoker.GuiSmoker;
 import com.fluffymoment.futurebackport.objects.blocks.smoker.TileEntitySmoker;
-import com.fluffymoment.futurebackport.util.Reference;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -39,7 +38,6 @@ public class GuiHandler implements IGuiHandler
         {
             return new GuiSmoker(player.inventory, (TileEntitySmoker)world.getTileEntity(new BlockPos(x, y, z)));
         }
-
         if(ID == ConfigHandler.GUI_BLAST_FURNACE)
         {
             return new GuiBlastFurnace(player.inventory, (TileEntityBlastFurnace)world.getTileEntity(new BlockPos(x, y, z)));

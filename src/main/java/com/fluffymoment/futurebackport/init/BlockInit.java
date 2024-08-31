@@ -3,6 +3,7 @@ package com.fluffymoment.futurebackport.init;
 import com.fluffymoment.futurebackport.Main;
 import com.fluffymoment.futurebackport.objects.blocks.BlockBase;
 import com.fluffymoment.futurebackport.objects.blocks.BlockBlueIce;
+import com.fluffymoment.futurebackport.objects.blocks.blast_furnace.BlastFurnace;
 import com.fluffymoment.futurebackport.objects.blocks.smoker.Smoker;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -17,6 +18,6 @@ public class BlockInit
     public static final Block BLUE_ICE = new BlockBlueIce("blue_ice", Material.PACKED_ICE);
     public static final Block SMOKER_OFF = new Smoker("smoker_off",  false).setCreativeTab(Main.FUTUREBACKPORTTAB);
     public static final Block SMOKER_ON = new Smoker("smoker_on", true);
-    public static final Block BLAST_FURNACE_OFF = new Smoker("blast_furnace_off",  false).setCreativeTab(Main.FUTUREBACKPORTTAB);
-    public static final Block BLAST_FURNACE_ON = new Smoker("blast_furnace_on", true);
+    public static final Block BLAST_FURNACE_OFF = new BlastFurnace("blast_furnace_off",  false).setCreativeTab(Main.FUTUREBACKPORTTAB);
+    public static final Block BLAST_FURNACE_ON = new BlastFurnace("blast_furnace_on", true);
 }
