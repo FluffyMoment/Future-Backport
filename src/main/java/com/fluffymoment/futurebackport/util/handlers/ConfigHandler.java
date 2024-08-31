@@ -13,7 +13,7 @@ public class ConfigHandler
 
     //GUI IDs
     public static int GUI_SMOKER = 4;
-    public static int GUI_BLAST_FURNACE = 4;
+    public static int GUI_BLAST_FURNACE = 3;
 
     //Entities
 
@@ -29,7 +29,7 @@ public class ConfigHandler
         category = "GUI IDs";
         config.addCustomCategoryComment(category, "Set IDs for each GUI.");
         GUI_SMOKER = config.getInt("GUI Smoker", category, 4, 0, 500, "GUI ID for the Smoker");
-        GUI_BLAST_FURNACE = config.getInt("GUI Blast Furnace", category, 4, 0, 500, "GUI ID for the Blast Furnace");
+        GUI_BLAST_FURNACE = config.getInt("GUI Blast Furnace", category, 3, 0, 500, "GUI ID for the Blast Furnace");
 
         category = "Entity IDs";
         config.addCustomCategoryComment(category, "Set IDs for each Entity.");
