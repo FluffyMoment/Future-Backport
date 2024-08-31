@@ -1,6 +1,8 @@
 package com.fluffymoment.futurebackport.objects.tabs;
 
+import com.fluffymoment.futurebackport.init.BlockInit;
 import com.fluffymoment.futurebackport.init.ItemInit;
+import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 
@@ -15,6 +17,6 @@ public class FutureBackportTab extends CreativeTabs
     @Override
     public ItemStack getTabIconItem()
      {
-         return new ItemStack(ItemInit.TEST_ITEM);
+         return new ItemStack(BlockInit.SMOKER_OFF);
      }
 }

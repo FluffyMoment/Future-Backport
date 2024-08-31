@@ -31,7 +31,7 @@ tile.jungle_trapdoor.name=Jungle Trapdoor
 //Food
 
 //Tabs
-itemGroup.futurebackporttab.name= Future Backport
+itemGroup.futurebackporttab= Future Backport
 
 //Containers
 container.smoker=Smoker
