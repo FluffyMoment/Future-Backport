@@ -6,6 +6,9 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.FMLLog;
+import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.OreIngredient;
 
 import java.util.Map;
 
@@ -29,6 +32,11 @@ public class BlastFurnaceRecipes
         this.addCookingRecipeForBlock(Blocks.GOLD_ORE, new ItemStack(Items.GOLD_INGOT), 0.9f);
         this.addCookingRecipeForBlock(Blocks.DIAMOND_ORE, new ItemStack(Items.DIAMOND), 1.0f);
         this.addCookingRecipeForBlock(Blocks.EMERALD_ORE, new ItemStack(Items.EMERALD), 1.0f);
+        this.addCookingRecipeForCustomBlock(Blocks.MITHRIL_ORE, new ItemStack(OreIngredient.MITHRIL_INGOT), 1.0f);
+    }
+    public void addCookingRecipeForCustomBlock(Block input, OreDictionary oredict, float experience)
+    {
+        this.addCookingCustom(Item.getItemFromBlock(input), oredict, experience);
     }
 
     private void addCookingRecipeForItem(Item input, ItemStack stack, float experience)
@@ -41,6 +49,11 @@ public class BlastFurnaceRecipes
         this.addCooking(Item.getItemFromBlock(input), stack, experience);
     }
 
+    public void addCookingCustom(Item input, OreDictionary oredict, float experience)
+    {
+        this.addCookingRecipe(new ItemStack(input, 1, 32767), null, experience);
+    }
+
     public void addCooking(Item input, ItemStack stack, float experience)
     {
         this.addCookingRecipe(new ItemStack(input, 1, 32767), stack, experience);
@@ -50,7 +63,7 @@ public class BlastFurnaceRecipes
     {
         if (getCookingResult(input) != ItemStack.EMPTY)
         {
-            net.minecraftforge.fml.common.FMLLog.log.info("Ignored cooking recipe with conflicting input: {} = {}", input, stack); return;
+            FMLLog.log.info("Ignored cooking recipe with conflicting input: {} = {}", input, stack); return;
         }
         this.cookingList.put(input, stack);
         this.experienceList.put(stack, Float.valueOf(experience));

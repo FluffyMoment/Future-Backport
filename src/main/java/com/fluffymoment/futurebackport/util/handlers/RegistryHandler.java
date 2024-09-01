@@ -1,6 +1,7 @@
 package com.fluffymoment.futurebackport.util.handlers;
 
 import com.fluffymoment.futurebackport.Main;
+import com.fluffymoment.futurebackport.events.OverrideRecipes;
 import com.fluffymoment.futurebackport.init.BlockInit;
 import com.fluffymoment.futurebackport.init.ItemInit;
 import com.fluffymoment.futurebackport.util.IHasModel;
@@ -51,12 +52,12 @@ public class RegistryHandler
 
     public static void preInitRegistries()
     {
-
+        EventHandler.registerEvents();
     }
 
     public static void initRegistries()
     {
-
+        NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
     }
 
     public static void postInitRegistries()
